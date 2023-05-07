@@ -7,6 +7,11 @@
         <Nullable>enable</Nullable>
         <AssemblyName>LuaBundler.Cli</AssemblyName>
         <RootNamespace>LuaBundler.Cli</RootNamespace>
+        
+        <!--Tool Settings-->
+        <PackAsTool>true</PackAsTool>
+        <ToolCommandName>lua-bundler</ToolCommandName>
+        <PackageOutputPath>./nupkg</PackageOutputPath>
     </PropertyGroup>
 
     <ItemGroup>
