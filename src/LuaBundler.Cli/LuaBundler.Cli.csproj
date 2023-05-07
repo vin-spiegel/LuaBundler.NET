@@ -12,6 +12,7 @@
         <PackAsTool>true</PackAsTool>
         <ToolCommandName>lua-bundler</ToolCommandName>
         <PackageOutputPath>./nupkg</PackageOutputPath>
+        <Version>1.0.1</Version>
     </PropertyGroup>
 
     <ItemGroup>
