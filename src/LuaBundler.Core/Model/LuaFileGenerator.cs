@@ -6,11 +6,13 @@ using LuaBundler.Core.Utils;
 
 namespace LuaBundler.Core.Model;
 
-public class LuaFileGenerator
+internal class LuaFileGenerator
 {
     private string? _workDir = ".";
     private readonly StringBuilder _distCode = new StringBuilder();
     private readonly RequireModuleRegistry _registry = new RequireModuleRegistry();
+
+    internal Action<string> RegistryFile = null!;
     
     private void RecursiveFiles(string name)
     {
@@ -36,8 +38,7 @@ public class LuaFileGenerator
             .Append("end }");
         
         _registry[name] = true;
-        
-        Console.WriteLine(filePath);
+        RegistryFile.Invoke(filePath);
         
         // 뎁스 추적하며 require 예약어가 걸린 파일들 생성하기
         foreach (var newName in _registry.GetNewFileNames(file))
