@@ -51,10 +51,10 @@ public class LuaFileGenerator
     /// </summary>
     internal string GenerateCode(string mainPath)
     {
-        var fi = new FileInfo(mainPath);
-        
         if (!Utility.CheckFileExist(mainPath))
             return string.Empty;
+        
+        var fi = new FileInfo(mainPath);
 
         _workDir = fi.DirectoryName;
         

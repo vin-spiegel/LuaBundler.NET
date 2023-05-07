@@ -5,8 +5,7 @@ namespace LuaBundler.Core.Context;
 
 public class RequireModuleRegistry
 {
-    //TODO: "", ' 패턴 추가하기
-    private readonly Regex _regex = new Regex("require\\(\"([0-9\\/a-zA-Z_-]+)\"\\)");
+    private readonly Regex _regex = new Regex("require[\\s*]?[\\(]?[\"']([\\s*]?[0-9\\/a-zA-Z_-]+)[\"'][\\)]?");
     private readonly IDictionary<string, bool> _requires = new Dictionary<string, bool>();
     private readonly LuaFileNameProvider _luaFileNameProvider = new LuaFileNameProvider();
     
